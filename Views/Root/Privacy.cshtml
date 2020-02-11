@@ -1,0 +1,20 @@
+﻿@{
+    Model.HasContainerClass = true;
+
+    Model.Title = "Heleus Core Privacy Policy";
+    Model.Description = "The Heleus Core Privacy Policy.";
+
+    Model.PromoHeading = "Heleus Core";
+    Model.PromoText = "Privacy Policy";
+    Model.PromoTagline = "";
+
+    ViewData["Privacy"] = await Model.ReadMarkDownAsync("misc/privacy");
+}
+
+<section class="u-content-space">
+    <div class="container">
+        <div class="w-md-75 mx-auto">
+            <markdown markdown=@ViewData["Privacy"]></markdown>
+        </div>
+    </div>
+</section>

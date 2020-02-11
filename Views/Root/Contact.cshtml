@@ -1,0 +1,71 @@
+﻿@{
+    Model.HasContainerClass = true;
+
+    Model.Title = "Heleus Core Contact";
+    Model.Description = "You can get in contact with us via mail or social media.";
+
+    Model.PromoHeading = "Heleus Core";
+    Model.PromoText = "Contact Us";
+    Model.PromoTagline = "";
+
+    ViewData["Impressum"] = await Model.ReadMarkDownAsync("misc/impressum");
+}
+
+@await Html.PartialAsync("ContactSection")
+
+<!-- End Why We? -->
+<!-- Why We? -->
+<section class="u-content-space">
+    <div class="container">
+
+        <div class="w-md-75 mx-auto">
+
+        <header class="mx-auto mb-8">
+            <h2 class="h1"></h2>
+            <p class="h5">Heleus, the website and the apps were build with the following frameworks, libraries and assets.</p>
+        </header>
+
+        <h3 class="h3">Website</h3>
+        <ul>
+            <li>
+                <a href="https://htmlstream.com/preview/stream-ui-kit/">
+                    Stream - UI Kit A beautiful Open Source Bootstrap 4 UI Kit<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://pixabay.com/">
+                    Pixabay · Stunning Free Images<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://docs.microsoft.com/en-us/aspnet/core">
+                    ASP.NET Core the free and open-source web framework<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://github.com/RickStrahl/Westwind.AspNetCore/tree/master/Westwind.AspNetCore.Markdown">
+                    Westwind APS.NET Core Markdown - Markdown support for your ASP.NET Core applications<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://github.com/lunet-io/markdig">
+                    markdig - A fast, powerful, CommonMark compliant, extensible Markdown processor for .NET<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" href="https://cookieconsent.insites.com/">
+                    Cookie Consent<i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </li>
+        </ul>
+
+        <markdown markdown=@ViewData["Impressum"]></markdown>
+        </div>
+    </div>
+</section>
+<!-- End Why We? -->

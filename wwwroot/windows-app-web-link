@@ -1,0 +1,5 @@
+[{
+  "packageFamilyName": "DateimanufakturGmbH.HeleusWallet_ehkma4yzck668",
+  "paths": [ "/wallet/action/*"],
+  "excludePaths" : [ ]
+ }]

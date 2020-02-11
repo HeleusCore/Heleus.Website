@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["SelfHost"] = await Model.ReadMarkDownAsync("selfhost");
+}
+
+<section class="u-content-space" style="background-color:#C0D3FF;">
+    <div class="container text-center">
+        <markdown markdown=@ViewData["SelfHost"]></markdown>
+    </div>
+</section>

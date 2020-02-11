@@ -1,0 +1,10 @@
+## Whitepaper {.h6 .font-weight-bold .mb-2 .mt-8}
+[Abstract](#js-scroll-to-abstract)  
+[Introduction](#js-scroll-to-introduction)  
+[Core](#js-scroll-to-core)  
+[Sidechains](#js-scroll-to-sidechains)  
+[Coin](#js-scroll-to-coin)  
+[Consensus](#js-scroll-to-consensus)  
+[Conclusion](#js-scroll-to-conclusion)  
+[Terminology](#js-scroll-to-terminology)  
+[Example](#js-scroll-to-example)

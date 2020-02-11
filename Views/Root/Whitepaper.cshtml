@@ -1,0 +1,29 @@
+﻿@{
+    Model.HasContainerClass = true;
+
+    Model.Title = "Heleus Core Whitepaper";
+    Model.Description = "Heleus Core: A decentralized back-end infrastructure utilizing distinct blockchains";
+
+    Model.PromoHeading = "Heleus Core";
+    Model.PromoText = "Whitepaper";
+    Model.PromoTagline = "A decentralized back-end infrastructure";
+
+    ViewData["Whitepaper"] = await Model.ReadMarkDownAsync("whitepaper");
+    ViewData["WhitepaperIndex"] = await Model.ReadMarkDownAsync("whitepaperindex");
+}
+
+<div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 border-right">
+        <div class="sticky-top docs-sidebar u-font-size-90 py-4">
+            <markdown markdown=@ViewData["WhitepaperIndex"]></markdown>
+        </div>
+    </div>
+    <div class="col-12 col-md-9 px-md-7 py-6">
+        <section class="mt-8 mb-8 text-center" style="background-color:yellow;">
+            <h4>This whitepaper is outdated. Please read the <a href="/faq#js-scroll-to-whitepaper">FAQ</a> for more information.</h4>
+        </section>
+        <section>
+            <markdown markdown=@ViewData["Whitepaper"]></markdown>
+        </section>
+    </div>
+</div>

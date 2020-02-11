@@ -1,0 +1,1 @@
+{0} should open automatically and process the request code. Click on the **Open** button above, if it doesn't. If {0} still doesn't open, click on **Copy Request Code to Clipboard**, open {0} manually and choose **Handle Request Code** from the **Settings** menu and paste the request code there. {{.mb-5}}

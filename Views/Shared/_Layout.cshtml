@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <title>@Model.Title</title>
+    <meta name="author" content="@Model.Author" />
+    <meta name="description" content="@Model.Description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Model.Title" />
+    <meta property="og:description" content="@Model.Description" />
+    <meta property="og:image" content="/images/graph.png" />
+    <meta property="og:image:alt" content="Heleus" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="667" />
+    <meta property="og:site_name" content="Heleus" />
+    <meta property="article:author" content="https://www.facebook.com/419459125177732" />
+    <meta property="article:publisher" content="https://www.facebook.com/419459125177732" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@@HeleusCore">
+    <meta name="twitter:creator" content="@@HeleusCore">
+
+    <!-- Bootstrap Styles -->
+    <link rel="stylesheet" type="text/css" href="~/streamui/vendors/bootstrap/css/bootstrap.css" asp-append-version="true">
+    <!-- Components Vendor Styles -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="~/streamui/vendors/magnific-popup/magnific-popup.css" asp-append-version="true">
+    -->
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="~/streamui/css/styles.css" asp-append-version="true">
+
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" asp-append-version="true">
+    <link rel="stylesheet" type="text/css" href="~/css/cookieconsent.min.css" asp-append-version="true" />
+    @await Html.PartialAsync("Meta")
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
+        <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-dark navbar-background">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/@Model.BrandingUrl">
+                    @if (Model.BrandingIcon != null)
+                    {
+                        <img class="branding-icon" src="/@Model.BrandingIcon">
+                        <img class="branding-short" src="/@Model.BrandingImage">
+                    }
+                    else
+                    {
+                        <img class="branding" src="/@Model.BrandingImage">
+                    }
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarTogglerDemo"
+                        aria-controls="navbarTogglerDemo"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+                        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/">
+                                Heleus Core
+                            </a>
+                        </li>
+
+                        <li class="nav-item mr-3 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/heleus">
+                                <img class="small-icon" src="/heleus/icon.png"> Heleus
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown mr-3 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/#apps" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-th u-font-size-90 mr-1"></i> Apps <i class="fas fa-angle-down small ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/heleus"><img class="small-icon" src="/heleus/icon.png"> Heleus</a>
+                                <a class="dropdown-item" href="/status"><img class="small-icon" src="/status/icon.png"> Status</a>
+                                <a class="dropdown-item" href="/message"><img class="small-icon" src="/message/icon.png"> Message</a>
+                                <a class="dropdown-item" href="/todo"><img class="small-icon" src="/todo/icon.png"> Todo</a>
+                                <a class="dropdown-item" href="/verify"><img class="small-icon" src="/verify/icon.png"> Verify</a>
+                                <a class="dropdown-item" href="/note"><img class="small-icon" src="/note/icon.png"> Note</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mr-3 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/faq">
+                                <i class="fas fa-question-circle u-font-size-90 mr-1"></i> FAQ
+                            </a>
+                        </li>
+
+                        <li class="nav-item mr-3 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/blog" target="_blank">
+                                <i class="fas fa-pen-square u-font-size-90 mr-1"></i> Blog
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown mr-3 mb-2 mb-lg-0">
+                            <a class="nav-link" href="/#footer" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-comment u-font-size-90 mr-1"></i> More <i class="fas fa-angle-down small ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" target="_blank" href="/github"><i class="fab fa-github u-font-size-90 mr-1" title="Github"></i> Github</a>
+                                <a class="dropdown-item" target="_blank" href="/twitter"><i class="fab fa-twitter u-font-size-90 mr-1" title="Twitter"></i> Twitter</a>
+                                <a class="dropdown-item" target="_blank" href="/medium"><i class="fab fa-medium u-font-size-90 mr-1" title="Blog@Medium"></i> Medium</a>
+                                <a class="dropdown-item" target="_blank" href="/reddit"><i class="fab fa-reddit u-font-size-90 mr-1" title="Reddit"></i> Reddit</a>
+                                <a class="dropdown-item" target="_blank" href="/facebook"><i class="fab fa-facebook u-font-size-90 mr-1" title="Facebook"></i> Facebook</a>
+                                <a class="dropdown-item" href="/contact"><i class="fas fa-envelope u-font-size-90 mr-1" title="Contact"></i> Contact</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <!-- Promo Block -->
+        @if (Model.FullscreenPromo)
+        {
+            <section class="js-parallax u-promo-block u-overlay text-white primary-bg-color" style="background-image: url(@Model.PromoImage);">
+                <!-- Promo Content -->
+                <div class="container u-overlay__inner u-ver-center u-content-space text-white">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <p class="h3 text-uppercase u-letter-spacing-sm mb-0">@Model.PromoHeading</p>
+                                <h4 class="display-sm-4 display-lg-3 mb-3">@Model.PromoText <span class="js-promo-typing"></span></h4>
+                                <p class="h3 text-uppercase u-letter-spacing-sm mb-2">@Model.PromoTagline</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Promo Content -->
+            </section>
+            <!-- End Promo Block -->
+        }
+        else
+        {
+            <!-- Promo Block -->
+            <section class="js-parallax u-promo-block u-promo-block--mheight-500 u-overlay text-white primary-bg-color" style="background-image: url(@Model.PromoImage);">
+                <!-- Promo Content -->
+                <div class="container u-overlay__inner u-ver-center u-content-space text-white">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <p class="h3 text-uppercase u-letter-spacing-sm mb-0">@Model.PromoHeading</p>
+                                <h4 class="display-sm-4 display-lg-3 mb-3">@Model.PromoText</h4>
+                                <p class="h3 text-uppercase u-letter-spacing-sm mb-2">@Model.PromoTagline</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Promo Content -->
+            </section>
+            <!-- End Promo Block -->
+        }
+
+    </header>
+
+    @await Html.PartialAsync("Beta")
+
+
+    <!-- End Header -->
+    <main class=" @Model.ContainerClass" role="main">
+        @RenderBody()
+    </main>
+    <!-- Footer -->
+    <a class="anchor" id="footer"></a>
+
+    <footer class="footer footer-black footer-big">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Heleus</h5>
+                        <div class="social-feed">
+                            <div class="feed-line"><a href="/">Home</a></div>
+                            <div class="feed-line"><a href="/faq">FAQ</a></div>
+                            <div class="feed-line"><a href="/datalicence">Data Licence</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Documentation</h5>
+                        <div class="social-feed">
+                            <div class="feed-line"><a href="/documentation">Home</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Apps</h5>
+                        <div class="social-feed">
+                            <div class="feed-line"><a href="/heleus"><img class="small-icon" src="/heleus/icon.png"> Heleus</a></div>
+                            <div class="feed-line"><a href="/status"><img class="small-icon" src="/status/icon.png"> Status</a></div>
+                            <div class="feed-line"><a href="/message"><img class="small-icon" src="/message/icon.png"> Message</a></div>
+                            <div class="feed-line"><a href="/todo"><img class="small-icon" src="/todo/icon.png"> Todo</a></div>
+                            <div class="feed-line"><a href="/verify"><img class="small-icon" src="/verify/icon.png"> Verify</a></div>
+                            <div class="feed-line"><a href="/note"><img class="small-icon" src="/note/icon.png"> Note</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Community</h5>
+                        <div class="social-feed">
+                            <div class="feed-line"><a target="_blank" href="/github"><i class="fab fa-github" title="Github"></i> Github</a></div>
+                            <div class="feed-line"><a target="_blank" href="/twitter"><i class="fab fa-twitter" title="Twitter"></i> Twitter</a></div>
+                            <div class="feed-line"><a target="_blank" href="/medium"><i class="fab fa-medium" title="Medium"></i> Blog@Medium</a></div>
+                            <div class="feed-line"><a target="_blank" href="/reddit"><i class="fab fa-reddit" title="Reddit"></i> Reddit</a></div>
+                            <div class="feed-line"><a target="_blank" href="/facebook"><i class="fab fa-facebook" title="Facebook"></i> Facebook</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <ul class="float-left">
+                <li>
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/privacy">
+                        Privacy
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <div class="copyright float-right">
+                Copyright &#xA9;
+                <script>document.write(new Date().getFullYear())</script> Heleus Core. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Global Vendor -->
+    <script src="~/streamui/vendors/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/streamui/vendors/jquery.migrate.min.js" asp-append-version="true"></script>
+    <script src="~/streamui/vendors/popper.min.js" asp-append-version="true"></script>
+    <script src="~/streamui/vendors/bootstrap/js/bootstrap.min.js" asp-append-version="true"></script>
+    <!-- Components Vendor  -->
+    <!--
+    <script src="~/streamui/vendors/jquery.parallax.js" asp-append-version="true"></script>
+    <script src="~/streamui/vendors/magnific-popup/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+    <script src="~/streamui/vendors/shuffle/jquery.shuffle.min.js" asp-append-version="true"></script>
+    -->
+    <script src="~/streamui/vendors/typedjs/typed.min.js" asp-append-version="true"></script>
+    <!-- Theme Components and Settings -->
+    <!--
+    <script src="~/streamui/js/vendors/magnific-popup.js" asp-append-version="true"></script>
+    <script src="~/streamui/js/vendors/shuffle.js" asp-append-version="true"></script>
+    -->
+
+    <script src="~/js/cookieconsent.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Html.PartialAsync("Scripts")
+    <!-- Web Fonts -->
+    <link rel="stylesheet" type="text/css" href="~/css/fonts.css" asp-append-version="true">
+    <script src="~/fonts/fontawesome/fontawesome.js" asp-append-version="true"></script>
+    <script src="~/fonts/fontawesome/brands.js" asp-append-version="true"></script>
+    <script src="~/fonts/fontawesome/solid.js" asp-append-version="true"></script>
+</body>
+</html>

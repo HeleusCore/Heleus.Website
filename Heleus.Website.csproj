@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv" Version="3.1.1" />
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.3.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\status\status1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\.well-known\assetlinks.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

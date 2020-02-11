@@ -1,0 +1,19 @@
+﻿@{
+    Model.Title = "Heleus Core - Frequently Asked Questions";
+    Model.Description = "Heleus Core, Frequently Asked Questions (FAQ).";
+
+    Model.PromoText = "Frequently Asked Questions";
+    Model.PromoHeading = "Heleus Core";
+
+    ViewData["FAQEXCERPT"] = await Model.ReadMarkDownAsync("faqexcerpt");
+    ViewData["FAQ"] = await Model.ReadMarkDownAsync("faq");
+}
+
+<section class="u-content-space">
+    <div class="container">
+        <div class="w-md-75 mx-auto">
+            <markdown markdown=@ViewData["FAQEXCERPT"]></markdown>
+            <markdown markdown=@ViewData["FAQ"]></markdown>
+        </div>
+    </div>
+</section>

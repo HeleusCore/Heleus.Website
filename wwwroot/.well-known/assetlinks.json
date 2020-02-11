@@ -1,0 +1,8 @@
+﻿[{
+	"relation": ["delegate_permission/common.handle_all_urls"],
+	"target": {
+		"namespace": "android_app",
+		"package_name": "com.heleuscore.wallet",
+    "sha256_cert_fingerprints": [ "DC:5D:73:A8:CD:F2:93:12:F5:DF:C5:9B:88:30:34:92:6B:79:0A:3A:26:33:E1:6D:61:F4:41:8D:C4:CE:08:CF", "3B:9A:52:91:7C:8F:77:E9:C2:5D:32:7D:A9:F3:D4:29:3C:AB:46:60:E3:66:A9:3D:20:08:68:14:A9:BE:DF:11" ]
+	}
+}]

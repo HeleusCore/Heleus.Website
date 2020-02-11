@@ -1,0 +1,5 @@
+﻿.navbar-bg-onscroll.fixed-top {
+    background: #32B40A;
+    background: linear-gradient(135deg, #32B40A 0%, #288214 100%);
+    transition: all .3s ease-out;
+}

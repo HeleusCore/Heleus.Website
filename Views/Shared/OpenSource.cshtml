@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["OpenSource"] = await Model.ReadMarkDownAsync("opensource");
+}
+
+<section class="bg-light u-content-space">
+    <div class="container">
+        <div class="text-center w-md-50 mx-auto mb-8">
+            <markdown markdown=@ViewData["OpenSource"]></markdown>
+        </div>
+    </div>
+</section>

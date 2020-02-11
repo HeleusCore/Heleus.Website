@@ -1,0 +1,38 @@
+﻿{
+	"applinks": {
+		"apps": [],
+		"details": [{
+			"appID": "7B32B5FH82.com.markobl.tickerfeed",
+			"paths": [
+                    "NOT /",
+                    "NOT /en",
+                    "NOT /de",
+                    "NOT /app",
+                    "NOT /app/*",
+                    "NOT /building",
+                    "NOT /building/*",
+                    "NOT /news",
+                    "NOT /news/*",
+                    "NOT /singlenews/*",
+                    "NOT /helpus",
+                    "NOT /helpus/*",
+                    "NOT /advertise",
+                    "NOT /advertise/*",
+                    "NOT /contact",
+                    "NOT /contact/*",
+                    "NOT /privacy",
+                    "NOT /privacy/*",
+                    "NOT /termsofuse",
+                    "NOT /termsofuse/*",
+                    "NOT /getandroidapp",
+                    "NOT /getiosapp",
+                    "NOT /getwindowsapp",
+                    "NOT /youtube",
+                    "NOT /facebook",
+                    "NOT /twitter",
+                    "NOT /reddit",
+                    "*"
+			]
+		}]
+	}
+}

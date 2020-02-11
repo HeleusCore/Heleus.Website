@@ -1,0 +1,19 @@
+﻿@{
+    Model.HasContainerClass = true;
+
+    Model.Title = "Heleus - Data Transaction Licence";
+    Model.Description = "Our Heleus Transaction Data Licence.";
+
+    Model.PromoHeading = "Heleus";
+    Model.PromoText = "Data Licence";
+    Model.PromoTagline = "The Heleus Transaction Data Licence";
+
+    ViewData["Licence"] = await Model.ReadMarkDownAsync("heleustransactiondatalicence");
+}
+<!-- Why We? -->
+<section class="u-content-space">
+    <div class="container">
+        <markdown markdown=@ViewData["Licence"]></markdown>
+    </div>
+</section>
+<!-- End Why We? -->

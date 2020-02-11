@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Beta"] = await Model.ReadMarkDownAsync("beta");
+}
+
+<section class="u-content-space" style="background-color:#C0D3FF;">
+    <div class="container text-center">
+        <markdown markdown=@ViewData["Beta"]></markdown>
+    </div>
+</section>

@@ -1,0 +1,90 @@
+﻿<div class="container">
+    <div class="text-center w-md-50 mx-auto mb-8">
+        <h2 class="h1 text-primary">Download</h2>
+        <p class="h5">@Model.AppInfo.Fullname is available for a lot of different platforms. Depending on the platform, you can download @Model.AppInfo.Fullname directly or get it from the availble store for free.</p>
+    </div>
+    <div class="row">
+        <div class="offset-lg-1 col-lg-2 mb-5 mb-lg-0 text-center">
+            <div class="display-4 text-primary mb-2">
+                <i class="fab fa-windows"></i>
+            </div>
+            <h4 class="h3 text-primary">Windows</h4>
+
+            @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.Windows))
+            {
+                <a class="" href="/storelink/@Model.AppInfo.Name/windows/">
+                    <i class="fab fa-microsoft mr-1"></i> Microsoft Store
+                </a>
+                <br />
+            }
+
+            <a class="" href="/@Model.AppInfo.Name/downloads#windows">
+                <i class="fa fa-download mr-1"></i> Download
+            </a>
+        </div>
+
+        <div class="col-lg-2 mb-5 mb-lg-0 text-center">
+            <div class="display-4 text-primary mb-2">
+                <i class="fab fa-apple"></i>
+            </div>
+            <h4 class="h3 text-primary">iOS</h4>
+
+            @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.iOS))
+            {
+                <a class="" href="/storelink/@Model.AppInfo.Name/ios/">
+                    <i class="fab fa-app-store-ios mr-1"></i> App Store
+                </a>
+            }
+            else
+            {
+                <p>Not available yet.</p>
+            }
+        </div>
+
+        <div class="col-lg-2 mb-5 mb-lg-0 text-center">
+            <div class="display-4 text-primary mb-2">
+                <i class="fab fa-android"></i>
+            </div>
+            <h4 class="h3 text-primary">Android</h4>
+
+            @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.Android))
+            {
+                <a class="" href="/storelink/@Model.AppInfo.Name/android/">
+                    <i class="fab fa-google-play mr-1"></i> Google Play Store
+                </a>
+                <br />
+            }
+            <a class="" href="/@Model.AppInfo.Name/downloads#android">
+                <i class="fa fa-download mr-1"></i> Download
+            </a>
+        </div>
+
+        <div class="col-lg-2 mb-5 mb-lg-0 text-center">
+            <div class="display-4 text-primary mb-2">
+                <i class="fab fa-apple"></i>
+            </div>
+            <h4 class="h3 text-primary">macOS</h4>
+            @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.macOS))
+            {
+                <a class="" href="/storelink/@Model.AppInfo.Name/macos">
+                    <i class="fab fa-app-store mr-1"></i> Mac App Store
+                </a>
+                <br />
+            }
+            <a class="" href="/@Model.AppInfo.Name/downloads#mac">
+                <i class="fa fa-download mr-1"></i> Download
+            </a>
+        </div>
+
+        <div class="col-lg-2 mb-5 mb-lg-0 text-center">
+            <div class="display-4 text-primary mb-2">
+                <i class="fab fa-linux"></i>
+            </div>
+            <h4 class="h3 text-primary">Linux</h4>
+            <a class="" href="/@Model.AppInfo.Name/downloads#linux">
+                <i class="fa fa-download mr-1"></i> Download
+            </a>
+        </div>
+
+    </div>
+</div>

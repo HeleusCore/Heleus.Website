@@ -1,0 +1,123 @@
+﻿@{
+    var name = Model.AppInfo.Fullname;
+
+    Model.Title = $"{name} Download";
+    Model.Description = $"Download {name} for free";
+
+    Model.PromoHeading = name;
+    Model.PromoText = "Download";
+    Model.PromoTagline = $"Download {name} for free";
+}
+
+@functions
+{
+    public Microsoft.AspNetCore.Html.IHtmlContent OutputDownloads(AppInfo appInfo, string os)
+    {
+        var html = new Microsoft.AspNetCore.Html.HtmlContentBuilder();
+
+        var downloads = DownloadsScheduler.Downloads.GetDownloads(appInfo.Name, os);
+        var isWindows = AppInfo.GetValidOsString(os) == AppInfo.Windows;
+
+        if (downloads == null || downloads.Count == 0)
+        {
+            html.AppendHtml("<p>No download available yet</p>");
+        }
+        else
+        {
+            for (var i = 0; i < downloads.Count; i++)
+            {
+                var dl = downloads[i];
+                var size = dl.Size / 1024 / 1024;
+
+                if (i == 0)
+                {
+                    //html.AppendHtml($"<h5><a href=\"/downloadfile/{dl.Filename}\"><i class=\"fa fa-download mr-1\"></i> Download Current Version: {dl.Version}</a> ({size} MB) <a href=\"{dl.VerifyLink}\"><img class=\"verify-small\" src=\"/images/verifylink.png\" /></a></h5>");
+                    html.AppendHtml($"<h5><a href=\"/downloadfile/{dl.Filename}\"><i class=\"fa fa-download mr-1\"></i> Download Current Version: {dl.Version}</a> ({size} MB) </h5>");
+
+                    if (isWindows)
+                        html.AppendHtml($"<p>{appInfo.Fullname} runs on Microsoft Windows 7 or later. It requires the <a href=\"https://dotnet.microsoft.com/download/dotnet-framework\">Microsoft .NET Framework 4.7.0 or later</a>.</p>");
+
+                    if (downloads.Count > 1)
+                    {
+                        html.AppendHtml("<br />Older Versions<br />");
+                    }
+                }
+                else
+                {
+                    //html.AppendHtml($"<a href=\"/downloadfile/{dl.Filename}\">Download {dl.Version}</a> ({size} MB) <a href=\"{dl.VerifyLink}\"><img class=\"verify-xsmall\" src=\"/images/verifylink.png\" /></a><br />");
+                    html.AppendHtml($"<a href=\"/downloadfile/{dl.Filename}\">Download {dl.Version}</a> ({size} MB) <br />");
+                }
+            }
+        }
+
+        return html;
+    }
+}
+
+<section class="u-content-space">
+    @await Html.PartialAsync("DownloadInfo")
+</section>
+
+<section class="u-content-space bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-1 col-lg-10 mb-5 mb-lg-0">
+                <a class="anchor2" id="windows"></a>
+
+                <h1 class="h1 text-primary">Windows <i class="fab fa-windows ml-1"></i></h1>
+                @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.Windows))
+                {
+                    <h4 class="h4 mb-4">Windows 10 users should use the current version from the <a href="/storelink/@Model.AppInfo.Name/windows/"><i class="fab fa-microsoft mr-1"></i> Microsoft Store</a>.</h4>
+                }
+                @OutputDownloads(Model.AppInfo, AppInfo.Windows)
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="u-content-space">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-1 col-lg-10 mb-5 mb-lg-0">
+                <a class="anchor2" id="mac"></a>
+
+                <h1 class="h1 text-primary">macOS <i class="fab fa-apple ml-1"></i></h1>
+                @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.macOS))
+                {
+                    <h4 class="h4 mb-4">macOS users should use the current version form the <a href="/storelink/@Model.AppInfo.Name/macos/"><i class="fab fa-app-store mr-1"></i> Mac App Store</a>.</h4>
+                }
+                @OutputDownloads(Model.AppInfo, AppInfo.macOS)
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="u-content-space bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-1 col-lg-10 mb-5 mb-lg-0">
+                <a class="anchor2" id="linux"></a>
+
+                <h1 class="h1 text-primary">Linux <i class="fab fa-linux ml-1"></i></h1>
+                @OutputDownloads(Model.AppInfo, AppInfo.Linux)
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="u-content-space">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-1 col-lg-10 mb-5 mb-lg-0">
+                <a class="anchor2" id="android"></a>
+
+                <h1 class="h1 text-primary">Android <i class="fab fa-android ml-1"></i></h1>
+                @if (((AppInfo)Model.AppInfo).HasStoreEntry(AppInfo.Android))
+                {
+                    <h4 class="h4 mb-4">Android users should use the current version form the <a href="/storelink/@Model.AppInfo.Name/android/"><i class="fab fa-google-play mr-1"></i> Google Play Store</a>.</h4>
+                }
+                @OutputDownloads(Model.AppInfo, AppInfo.Android)
+            </div>
+        </div>
+    </div>
+</section>

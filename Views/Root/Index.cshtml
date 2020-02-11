@@ -1,0 +1,242 @@
+﻿@{
+    Model.Title = "Heleus Core";
+    Model.Description = "Heleus Core, the blockchain technology with a purpose.";
+
+    Model.FullscreenPromo = true;
+    Model.PromoHeading = "Heleus Core";
+    Model.PromoTagline = "The blockchain technology with a purpose";
+
+    ViewData["Title"] = await Model.ReadMarkDownAsync("index/title");
+
+    ViewData["HeleusAccount"] = await Model.ReadMarkDownAsync("index/heleusaccount");
+    ViewData["HeleusDatabase"] = await Model.ReadMarkDownAsync("index/heleusdatabase");
+    ViewData["HeleusCoin"] = await Model.ReadMarkDownAsync("index/heleuscoin");
+    ViewData["HeleusPrivacy"] = await Model.ReadMarkDownAsync("index/heleusprivacy");
+
+    ViewData["Heleus"] = await Model.ReadMarkDownAsync("index/heleus");
+
+    ViewData["OpenTitle"] = await Model.ReadMarkDownAsync("index/opentitle");
+
+    ViewData["OpenEcosystem"] = await Model.ReadMarkDownAsync("index/openecosystem");
+    ViewData["OpenData"] = await Model.ReadMarkDownAsync("index/opendata");
+    ViewData["OpenServices"] = await Model.ReadMarkDownAsync("index/openservices");
+    ViewData["OpenCommunication"] = await Model.ReadMarkDownAsync("index/opencommunication");
+    ViewData["OpenIdentity"] = await Model.ReadMarkDownAsync("index/openidentity");
+    ViewData["OpenDApps"] = await Model.ReadMarkDownAsync("index/opendapps");
+    ViewData["OpenCoin"] = await Model.ReadMarkDownAsync("index/opencoin");
+    ViewData["OpenDevelopment"] = await Model.ReadMarkDownAsync("index/opendevelopment");
+
+    ViewData["HelpUs"] = await Model.ReadMarkDownAsync("index/helpus");
+
+    ViewData["AppsTitle"] = await Model.ReadMarkDownAsync("index/appstitle");
+    ViewData["AppsHeleus"] = await Model.ReadMarkDownAsync("index/appsheleus");
+    ViewData["AppsStatus"] = await Model.ReadMarkDownAsync("index/appsstatus");
+    ViewData["AppsMessage"] = await Model.ReadMarkDownAsync("index/appsmessage");
+    ViewData["AppsTodo"] = await Model.ReadMarkDownAsync("index/appstodo");
+    ViewData["AppsNote"] = await Model.ReadMarkDownAsync("index/appsnote");
+    ViewData["AppsVerify"] = await Model.ReadMarkDownAsync("index/appsverify");
+
+    ViewData["FAQTitle"] = await Model.ReadMarkDownAsync("index/faqtitle");
+    ViewData["FAQ"] = await Model.ReadMarkDownAsync("faqexcerpt");
+}
+
+@await Html.PartialAsync("HeleusSection")
+
+<!-- Why We? -->
+<section class="bg-light u-content-space">
+    <div class="container">
+
+        <div class="mx-auto mb-8 text-center">
+            <markdown markdown=@ViewData["Title"]></markdown>
+        </div>
+
+        <hr class="my-8">
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <markdown markdown=@ViewData["HeleusAccount"]></markdown>
+                </div>
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <markdown markdown=@ViewData["HeleusDatabase"]></markdown>
+                </div>
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <markdown markdown=@ViewData["HeleusPrivacy"]></markdown>
+                </div>
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <markdown markdown=@ViewData["HeleusCoin"]></markdown>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8">
+
+        <div class="container">
+            <div class="mx-auto">
+                <markdown markdown=@ViewData["Heleus"]></markdown>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="anchor" id="apps"></a>
+<section class="u-content-space">
+    <div class="container">
+
+        <header class="mx-auto mb-8 text-center">
+            <markdown markdown=@ViewData["AppsTitle"]></markdown>
+        </header>
+
+        <div class="row text-center mb-5">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsHeleus"]></markdown>
+                <a href="/heleus">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="row text-center mb-5">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsStatus"]></markdown>
+                <a href="/status">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsMessage"]></markdown>
+                <a href="/message">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="row text-center mb-5">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsTodo"]></markdown>
+                <a href="/todo">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsNote"]></markdown>
+                <a href="/note">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="row text-center mb-5">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <markdown markdown=@ViewData["AppsVerify"]></markdown>
+                <a href="/verify">
+                    More <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("SelfHost")
+
+<a class="anchor" id="faq"></a>
+<section class="bg-light u-content-space">
+    <div class="container">
+
+        <header class="mx-auto mb-8">
+            <markdown markdown=@ViewData["FAQTitle"]></markdown>
+        </header>
+
+
+        <div class="mx-auto">
+            <markdown markdown=@ViewData["FAQ"]></markdown>
+            <a href="/faq">
+                Read all Frequently Asked Questions <div class="fas fa-arrow-right ml-1"></div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<a class="anchor" id="open"></a>
+<section class="u-content-space">
+    <div class="container">
+
+        <header class="mx-auto mb-8 text-center">
+            <markdown markdown=@ViewData["OpenTitle"]></markdown>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-lg-6 mb-5 mb-lg-0 pr-lg-5">
+                    <markdown markdown=@ViewData["OpenEcosystem"]></markdown>
+                </div>
+                <div class="text-center col-lg-6">
+                    <markdown markdown=@ViewData["OpenIdentity"]></markdown>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8">
+
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-lg-6 mb-5 mb-lg-0 pr-lg-5">
+                    <markdown markdown=@ViewData["OpenCommunication"]></markdown>
+                </div>
+                <div class="text-center col-lg-6">
+                    <markdown markdown=@ViewData["OpenServices"]></markdown>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8">
+
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-lg-6 mb-5 mb-lg-0 pr-lg-5">
+                    <markdown markdown=@ViewData["OpenData"]></markdown>
+                    <a href="/datalicence">
+                        Read our Data Licence <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="text-center col-lg-6">
+                    <markdown markdown=@ViewData["OpenDApps"]></markdown>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8">
+
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-lg-6 mb-5 mb-lg-0 pr-lg-5">
+                    <markdown markdown=@ViewData["OpenCoin"]></markdown>
+                </div>
+                <div class="text-center col-lg-6">
+                    <markdown markdown=@ViewData["OpenDevelopment"]></markdown>
+                    <a href="/github">
+                        Join us on Github <i class="fab fa-github ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<a class="anchor" id="helpus"></a>
+<section class="bg-light u-content-space">
+    <div class="container">
+        <header class="text-center w-md-75 mx-auto mb-0">
+            <markdown markdown=@ViewData["HelpUs"]></markdown>
+        </header>
+    </div>
+</section>
+
+<a class="anchor" id="contact"></a>
+@await Html.PartialAsync("ContactSection")
