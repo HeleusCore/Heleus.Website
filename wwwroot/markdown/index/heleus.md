@@ -27,8 +27,8 @@ Heleus Coin is more, it is the foundation for our independent ecosystem.
 Validated Heleus Core services generate the Heleus Coin as a compensation. And
 the more successfull a service is, the more Heleus Coins it generates. And we also
 let the users participate in this process as a certain amount of the generated
-Heleus Coins goes the users of service. And the users can use the Heleus Coins
-to buy premium content or subscriptions for this or another service. And the
+Heleus Coins go to the users of the service. And the users can use the Heleus Coins
+to buy premium content or subscriptions for this or another service as the
 Heleus Coin is valid in every Heleus Core service, it is not coupled to one
 service.
 
@@ -41,7 +41,7 @@ can focus on building great apps and services with privacy in mind. {.mb-8}
 ### The Heleus Account is your anonymous digital identity {.h3 .text-primary }
 
 We wanted to have one account that works accross all the Heleus Core services
-that are available in will be available in the future, no matter if the service
+that are available and will be available in the future, no matter if the service
 is build by us or anyone else. And we wanted to get rid of the problem that you
 need a password for everything.
 

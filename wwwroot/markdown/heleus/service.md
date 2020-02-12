@@ -2,4 +2,4 @@
 Manage all your Heleus Service Accounts. {.h5 .mb-8}
 
 Before you can use a Heleus Service, you must authorize it with your Heleus
-Account. Use the Heleus App to  {.mb-4}
+Account. Use the Heleus App to authorize Heleus Services. {.mb-4}
