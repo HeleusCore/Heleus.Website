@@ -10,9 +10,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\status\status1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="wwwroot\.well-known\assetlinks.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
