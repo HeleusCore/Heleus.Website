@@ -9,7 +9,7 @@ something like that costs a lot of money.
 
 And the easiest way to make money to pay the bills is to collect all your data and meta data,
 link all this data to build a personal profile and finally use this against you.
-Like using psycholocial tricks and algorithems to let you buy stuff that you
+Like using psychological tricks and algorithms to let you buy stuff that you
 don't need or sell ~~illegally~~ your personal data to other external companies
 for billions of profit.
 
@@ -19,20 +19,20 @@ better way to offer (free) services that respect the privacy of the users. {.mb-
 
 ### The Heleus Coin is the foundation for an independent ecosystem {.h3 .text-primary }
 
-At the end of the day, everbody has to pay for their bills. For this reason, we
+At the end of the day, everybody has to pay for their bills. For this reason, we
 developed the Heleus Coin. It's a crypto currency, but with a purpose. Usually,
 crypto currencies have no other purpose than being a crypto currency. But the
 Heleus Coin is more, it is the foundation for our independent ecosystem.
 
 Validated Heleus Core services generate the Heleus Coin as a compensation. And
-the more successfull a service is, the more Heleus Coins it generates. And we also
+the more successful a service is, the more Heleus Coins it generates. And we also
 let the users participate in this process as a certain amount of the generated
 Heleus Coins go to the users of the service. And the users can use the Heleus Coins
 to buy premium content or subscriptions for this or another service as the
 Heleus Coin is valid in every Heleus Core service, it is not coupled to one
 service.
 
-As you can see, the Heleus Coin is the foundation for our independet Heleus Core
+As you can see, the Heleus Coin is the foundation for our independent Heleus Core
 ecosystem. It has a purpose. It is powered by all the Heleus Core services and
 the users, that use them on a daily basis. With the Heleus Coin, developers can
 break free. They don't have to sell the data of their users to make money. They
