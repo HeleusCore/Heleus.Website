@@ -5,7 +5,7 @@ namespace Heleus.Website
 {
     public class AppInfo
     {
-        static readonly string[] _availableOs = { "windows", "linux", "macos", "android", "ios" };
+        static readonly string[] _availableOs = { "Windows", "Linux", "macOS", "Android", "iOS" };
 
         public static string Windows => _availableOs[0];
         public static string Linux = _availableOs[1];
@@ -18,9 +18,14 @@ namespace Heleus.Website
             return GetValidOsString(os) != null;
         }
 
+        public static void Init()
+        {
+
+        }
+
         public static string GetValidOsString(string os)
         {
-            os = os.ToLower();
+            //os = os.ToLower();
             if (_availableOs.Any((o) => o == os))
                 return os;
             return null;
@@ -30,12 +35,13 @@ namespace Heleus.Website
 
         public static AppInfo GetAppInfo(string app)
         {
-            _appInfos.TryGetValue(app.ToLower(), out var appInfo);
+            _appInfos.TryGetValue(app, out var appInfo);
             return appInfo;
         }
 
         public string Fullname { get; private set; }
         public string Name { get; private set; }
+        public string DownloadName { get; private set; }
         public string Schema { get; private set; }
 
         readonly Dictionary<string, string> _storeLinkIds = new Dictionary<string, string>();
@@ -46,7 +52,8 @@ namespace Heleus.Website
             Fullname = fullname;
             Name = name.ToLower();
             Schema = fullname.ToLower().Replace(" ", "");
-            _appInfos[Name] = this;
+            DownloadName = fullname.Replace(" ", "");
+            _appInfos[DownloadName] = this;
         }
 
         protected void AddRequests(params string[] requests)
@@ -111,9 +118,10 @@ namespace Heleus.Website
     {
         public HeleusAppInfo() : base("Heleus", "heleus")
         {
-            AddStoreLink(Windows, "hohoho");
+            //AddStoreLink(Windows, "hohoho");
 
             AddRequests("transfercoins",
+            			"revenue",
                         "authorizeservice",
                         "authorizeservicederived",
                         "authorizepurchase",

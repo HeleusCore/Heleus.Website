@@ -19,6 +19,7 @@ namespace Heleus.Website
         {
             Configuration = configuration;
             Environment = environment;
+            AppInfo.Init();
         }
 
         public readonly IConfiguration Configuration;

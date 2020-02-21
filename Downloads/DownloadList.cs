@@ -18,22 +18,22 @@ namespace Heleus.Website.Downloads
             if (os == null)
                 return;
 
-            if (!_items.ContainsKey(appInfo.Name))
+            if (!_items.ContainsKey(appInfo.DownloadName))
             {
                 var downloads = new Dictionary<string, List<DownloadItem>>
                 {
                     { os, new List<DownloadItem>() }
                 };
-                _items.Add(appInfo.Name, downloads);
+                _items.Add(appInfo.DownloadName, downloads);
             }
 
-            if (!_items[appInfo.Name].ContainsKey(os))
+            if (!_items[appInfo.DownloadName].ContainsKey(os))
             {
-                _items[appInfo.Name].Add(os, new List<DownloadItem>());
+                _items[appInfo.DownloadName].Add(os, new List<DownloadItem>());
             }
 
-            var list = _items[appInfo.Name][os];
-            //list.Add(new DownloadItem(filename, size, version, verifyLink));
+            var list = _items[appInfo.DownloadName][os];
+            list.Add(new DownloadItem(filename, size, version/*, verifyLink*/));
             list.Sort((a, b) => a.Version.CompareTo(b.Version) * -1);
         }
 

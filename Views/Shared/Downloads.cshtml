@@ -15,7 +15,7 @@
     {
         var html = new Microsoft.AspNetCore.Html.HtmlContentBuilder();
 
-        var downloads = DownloadsScheduler.Downloads.GetDownloads(appInfo.Name, os);
+        var downloads = DownloadsScheduler.Downloads.GetDownloads(appInfo.DownloadName, os);
         var isWindows = AppInfo.GetValidOsString(os) == AppInfo.Windows;
 
         if (downloads == null || downloads.Count == 0)
